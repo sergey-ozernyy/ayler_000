@@ -1,0 +1,30 @@
+import time
+start_time=time.time()
+list_f=list(range(13,25))
+znach_and_dlin={}
+znach_and_dlin.fromkeys(list_f)
+for i in list_f:
+    list_p=[i]
+    for a in list_p:
+        if a%2==0:
+            n=a//2
+            if n!=1:
+                list_p.append(n)
+            else:
+                list_p.append(1)
+                break
+        else:
+            n=a*3+1
+            if n!=1:
+                list_p.append(n)
+            else:
+                list_p.append(1)
+                break
+    znach_and_dlin[i]=len(list_p)
+max_zn=0  
+for i in znach_and_dlin.keys():
+    if znach_and_dlin[i]>=max_zn:
+        max_zn=i
+        
+print(znach_and_dlin.keys())
+print(time.time()-start_time)
